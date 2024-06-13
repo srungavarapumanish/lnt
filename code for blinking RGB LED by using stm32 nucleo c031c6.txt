@@ -1,0 +1,32 @@
+const int redPin = 2;    // Replace with the actual pin number for the red LED
+const int greenPin = 3;  // Replace with the actual pin number for the green LED
+const int bluePin = 4;   // Replace with the actual pin number for the blue LED
+
+void setup() {
+    pinMode(redPin, OUTPUT);
+    pinMode(greenPin, OUTPUT);
+    pinMode(bluePin, OUTPUT);
+}
+
+void loop() {
+    // Turn on red
+    digitalWrite(redPin, HIGH);
+    digitalWrite(greenPin, LOW);
+    digitalWrite(bluePin, LOW);
+    delay(1000);
+
+    // Turn on green
+    digitalWrite(redPin, LOW);
+    digitalWrite(greenPin, HIGH);
+    digitalWrite(bluePin, LOW);
+    delay(1000);
+
+    // Turn on blue
+    digitalWrite(redPin, LOW);
+    digitalWrite(greenPin, LOW);
+    digitalWrite(bluePin, HIGH);
+    delay(1000);
+}
+
+
+blinking RGB LED it can change its colour for every one second as red green blue by using stm32 nucleo c031c6
