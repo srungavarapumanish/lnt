@@ -1,0 +1,16 @@
+
+const int ledPin = LED_BUILTIN; // LED_BUILTIN is mapped to PA5
+
+void setup() {
+    pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+    digitalWrite(ledPin, HIGH); // Turn the LED on
+    delay(1000); // Wait for 1 second
+    digitalWrite(ledPin, LOW); // Turn the LED off
+    delay(1000); // Wait for 1 second
+}
+
+
+the led is blinking for every one second
