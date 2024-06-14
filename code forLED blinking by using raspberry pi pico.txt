@@ -1,0 +1,11 @@
+# Import necessary libraries
+import machine
+import time
+
+# Define the pin connected to the LED (built-in LED on pin 5)
+led = machine.Pin(5, machine.Pin.OUT)
+
+# Blink the LED
+while True:
+    led.toggle()  # Toggle the LED state
+    time.sleep(0.5)  # Wait for 0.5 seconds
