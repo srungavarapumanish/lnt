@@ -1,0 +1,31 @@
+from machine import Pin, PWM
+import utime
+
+# Define the RGB LED pins
+red_led = PWM(Pin(0))
+green_led = PWM(Pin(1))
+blue_led = PWM(Pin(2))
+
+# Set the frequency
+red_led.freq(1000)
+green_led.freq(1000)
+blue_led.freq(1000)
+
+while True:
+    # Red
+    red_led.duty_u16(65025)
+    green_led.duty_u16(0)
+    blue_led.duty_u16(0)
+    utime.sleep(1)
+    
+    # Green
+    red_led.duty_u16(0)
+    green_led.duty_u16(65025)
+    blue_led.duty_u16(0)
+    utime.sleep(1)
+    
+    # Blue
+    red_led.duty_u16(0)
+    green_led.duty_u16(0)
+    blue_led.duty_u16(65025)
+    utime.sleep(1)
