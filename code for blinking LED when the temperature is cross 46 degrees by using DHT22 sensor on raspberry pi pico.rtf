@@ -1,0 +1,27 @@
+from machine import Pin, PWM
+import utime
+import dht
+
+# Define the LED pin
+led = PWM(Pin(0))
+
+# Set the frequency
+led.freq(1000)
+
+# Initialize the DHT22 sensor
+sensor = dht.DHT22(Pin(2))
+
+while True:
+    # Read temperature
+    sensor.measure()
+    temp = sensor.temperature()
+    
+    # If temperature is above 50 degrees Celsius, blink the LED
+    if temp > 46:
+        # LED on
+        led.duty_u16(65025)
+        utime.sleep(1)
+        
+        # LED off
+        led.duty_u16(0)
+        utime.sleep(1)
